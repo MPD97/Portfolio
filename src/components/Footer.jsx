@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="social-links">
           <a 
-            href="https://linkedin.com/in/yourprofile" 
+            href="www.linkedin.com/in/mateusz-a-5061661b1" 
             target="_blank" 
             rel="noopener noreferrer"
             className="social-link"
@@ -15,7 +15,7 @@ const Footer = () => {
             LinkedIn
           </a>
           <a 
-            href="https://buymeacoffee.com/yourprofile" 
+            href="https://buymeacoffee.com/mateusza" 
             target="_blank" 
             rel="noopener noreferrer"
             className="social-link"
