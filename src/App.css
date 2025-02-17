@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  padding: 3rem 0;
+}
+
+/* Dodatkowe style dla lepszej widoczności contentu */
+.project-section {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.7);
+}
