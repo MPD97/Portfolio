@@ -3,7 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     imageContainers.forEach(container => {
         const images = container.querySelectorAll('img');
+        const projectCard = container.closest('.project-card');
+        
         if (images.length > 1) {
+            projectCard.classList.add('multiple-images');
             let currentImageIndex = 0;
             let intervalId = null;
             
