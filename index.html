@@ -58,6 +58,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="language-switcher">
+        <button class="lang-btn" data-lang="pl">
+            <img src="https://flagcdn.com/w40/pl.png" alt="Polski" title="Polski">
+        </button>
+        <button class="lang-btn" data-lang="en">
+            <img src="https://flagcdn.com/w40/gb.png" alt="English" title="English">
+        </button>
+    </div>
     <div id="cookie-banner" class="cookie-banner">
         <div class="cookie-content">
             <p>Ta strona używa plików cookie do analizy ruchu. Możesz wybrać, czy chcesz zaakceptować te pliki. 
@@ -70,10 +78,10 @@
     </div>
     <main>
         <section class="about-me">
-            <h2>O mnie</h2>
+            <h2 data-translate="about-title">O mnie</h2>
             <div class="about-card">
                 <div class="about-content">
-                    <p>Programista .NET z kilkuletnim doświadczeniem w tworzeniu skalowalnych aplikacji webowych i desktopowych. Specjalizuję się w technologii .NET (Core, Framework), WPF, WinForms oraz pracy z bazami danych SQL (SQL Server, PostgreSQL, Oracle) i NoSQL (MongoDB, Redis). Mam doświadczenie w optymalizacji aplikacji pod kątem wydajności, wdrażaniu CI/CD (Azure DevOps, Jenkins) oraz pracy w chmurze (Azure, Docker, Kubernetes).</p>
+                    <p data-translate="about-content">Programista .NET z kilkuletnim doświadczeniem w tworzeniu skalowalnych aplikacji webowych i desktopowych. Specjalizuję się w technologii .NET (Core, Framework), WPF, WinForms oraz pracy z bazami danych SQL (SQL Server, PostgreSQL, Oracle) i NoSQL (MongoDB, Redis). Mam doświadczenie w optymalizacji aplikacji pod kątem wydajności, wdrażaniu CI/CD (Azure DevOps, Jenkins) oraz pracy w chmurze (Azure, Docker, Kubernetes).</p>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/mateusz-a-5061661b1/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -86,7 +94,7 @@
             </div>
         </section>
         <section class="projects">
-            <h2>Moje Projekty</h2>
+            <h2 data-translate="projects-title">Moje Projekty</h2>
             <div class="project-card">
                 <div class="project-images">
                     <div class="image-container">
@@ -100,12 +108,26 @@
                 </div>
                 <div class="project-info">
                     <h3>NaprawNapisy.pl</h3>
-                    <p>Aplikacja do konwersji polskich znaków w napisach do filmów. Prosta w obsłudze strona, która pozwala szybko zamienić nieczytelny tekst z napisów poprawiając polskie znaki.</p>
+                    <p data-translate="project-description">Aplikacja do konwersji polskich znaków w napisach do filmów. Prosta w obsłudze strona, która pozwala szybko zamienić nieczytelny tekst z napisów poprawiając polskie znaki.</p>
                     <div class="project-links">
                         <a href="https://salmon-cliff-070cd0610.4.azurestaticapps.net/" target="_blank" rel="noopener noreferrer">Zobacz Demo</a>
                         <a href="https://github.com/MPD97/SubtitleConverter" target="_blank" rel="noopener noreferrer">GitHub</a>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <h2 data-translate="contact-title">Kontakt</h2>
+            <div class="contact-card">
+                <p data-translate="contact-message">Masz pytania? Chcesz nawiązać współpracę? Napisz do mnie!</p>
+                <a href="mailto:softwarenetpolska@gmail.com" class="contact-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                    <span data-translate="send-message">Wyślij wiadomość</span>
+                </a>
             </div>
         </section>
     </main>

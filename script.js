@@ -127,3 +127,61 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check consent on page load
     checkConsent();
 });
+
+// Language translations
+const translations = {
+    'pl': {
+        'about-title': 'O mnie',
+        'about-content': 'Programista .NET z kilkuletnim doświadczeniem w tworzeniu skalowalnych aplikacji webowych i desktopowych. Specjalizuję się w technologii .NET (Core, Framework), WPF, WinForms oraz pracy z bazami danych SQL (SQL Server, PostgreSQL, Oracle) i NoSQL (MongoDB, Redis). Mam doświadczenie w optymalizacji aplikacji pod kątem wydajności, wdrażaniu CI/CD (Azure DevOps, Jenkins) oraz pracy w chmurze (Azure, Docker, Kubernetes).',
+        'projects-title': 'Moje Projekty',
+        'project-description': 'Aplikacja do konwersji polskich znaków w napisach do filmów. Prosta w obsłudze strona, która pozwala szybko zamienić nieczytelny tekst z napisów poprawiając polskie znaki.',
+        'contact-title': 'Kontakt',
+        'contact-message': 'Masz pytania? Chcesz nawiązać współpracę? Napisz do mnie!',
+        'send-message': 'Wyślij wiadomość'
+    },
+    'en': {
+        'about-title': 'About Me',
+        'about-content': '.NET Developer with several years of experience in creating scalable web and desktop applications. I specialize in .NET technology (Core, Framework), WPF, WinForms, and working with SQL databases (SQL Server, PostgreSQL, Oracle) and NoSQL (MongoDB, Redis). I have experience in application performance optimization, CI/CD implementation (Azure DevOps, Jenkins), and cloud computing (Azure, Docker, Kubernetes).',
+        'projects-title': 'My Projects',
+        'project-description': 'Application for converting Polish characters in movie subtitles. An easy-to-use website that allows you to quickly fix unreadable text in subtitles by correcting Polish characters.',
+        'contact-title': 'Contact',
+        'contact-message': 'Have questions? Want to collaborate? Write to me!',
+        'send-message': 'Send Message'
+    }
+};
+
+// Language switcher functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const languageButtons = document.querySelectorAll('.lang-btn');
+    const LANGUAGE_KEY = 'selectedLanguage';
+    
+    // Load saved language preference or default to Polish
+    const savedLanguage = localStorage.getItem(LANGUAGE_KEY) || 'pl';
+    setLanguage(savedLanguage);
+    
+    languageButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const language = button.dataset.lang;
+            setLanguage(language);
+            localStorage.setItem(LANGUAGE_KEY, language);
+        });
+    });
+    
+    function setLanguage(language) {
+        // Update active button state
+        languageButtons.forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.lang === language);
+        });
+        
+        // Update text content
+        document.querySelectorAll('[data-translate]').forEach(element => {
+            const key = element.dataset.translate;
+            if (translations[language] && translations[language][key]) {
+                element.textContent = translations[language][key];
+            }
+        });
+        
+        // Update document language
+        document.documentElement.lang = language;
+    }
+});
