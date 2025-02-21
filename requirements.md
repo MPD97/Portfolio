@@ -13,6 +13,7 @@ Stworzenie responsywnej strony portfolio programisty, prezentującej projekty, u
 - style.css
 - script.js
 - assets/konwerter_polskich_znakow.png
+- privacy.html
 
 # ogólnie o projekcie
 Celem projktu jest stworzenie prostej strony internetowej portfolio programisty. Strona ma zwierać projekty które wykonał oraz informacje o nich. Kontakt za pomocą mailto.
@@ -38,8 +39,36 @@ Celem projktu jest stworzenie prostej strony internetowej portfolio programisty.
     - w sekcji o mnie dodaj link do mojego linkedin: https://www.linkedin.com/in/mateusz-a-5061661b1/
 3. Strona ma być responsywna i wyświetlać się poprawnie na urządzeniach o różnych rozdzielczosciach i wielkosciach ekranu.
 4. Strona ma być indeksowana przez wyszukiwarki internetowe.
-5. Dodanie analityki strony (google analytics)
-6. Dodanie formularza kontaktowego mailto (softwarenetpolska@gmail.com)
-7. Strona ma wspierać język polski i angielski za pomoca flag w prawym górnym rogu strony.
+5. Dodanie analityki strony (google analytics).
+6. Dodanie polityki prywatności. 
+    - treść polityki prywatności:
+    Polityka Prywatności i RODO
+    1. Administrator danychAdministratorem danych osobowych jest [Twoja nazwa / firma], z siedzibą w [adres], e-mail: [adres e-mail].
+    2. Jakie dane zbieramy?Podczas korzystania z naszej strony internetowej mogą być zbierane następujące dane:
+    Adres IP
+    Pliki cookie (ciasteczka)
+    Dane przekazywane dobrowolnie przez użytkownika (np. formularz kontaktowy, jeśli dotyczy)
+    3. Cel przetwarzania danychDane zbierane są w celu:
+    Analizy ruchu na stronie i poprawy jej działania (Google Analytics, jeśli dotyczy)
+    Odpowiedzi na zapytania użytkowników (jeśli dostępny jest formularz kontaktowy)
+    Zapewnienia bezpieczeństwa i działania strony
+    4. Podstawa prawna przetwarzaniaPrzetwarzamy dane na podstawie:
+    Zgody użytkownika (art. 6 ust. 1 lit. a RODO) – w przypadku plików cookie
+    Uzasadnionego interesu administratora (art. 6 ust. 1 lit. f RODO) – analiza statystyk
+    5. Czas przechowywania danychDane są przechowywane:
+    Pliki cookie – zgodnie z ustawieniami przeglądarki użytkownika
+    Logi serwera – maksymalnie 30 dni
+    Dane z formularza kontaktowego – do 6 miesięcy od ostatniego kontaktu
+    6. Prawa użytkownikaUżytkownik ma prawo do:
+    Usunięcia danych („prawo do bycia zapomnianym”)
+    Ograniczenia przetwarzania
+    Sprzeciwu wobec przetwarzania danych
+    Aby skorzystać z tych praw, prosimy o kontakt na adres: [adres e-mail].
+    7. Pliki cookieNasza strona korzysta z plików cookie. Możesz zarządzać nimi w ustawieniach swojej przeglądarki. Szczegółowe informacje znajdują się w Polityce Cookies.
+    8. Zmiany w polityce prywatnościZastrzegamy sobie prawo do zmiany niniejszej polityki. Zmiany będą publikowane na tej stronie.
+    9. KontaktW razie pytań dotyczących polityki prywatności skontaktuj się z nami: [adres e-mail].
+7. Dodanie akceptacji polityki prywatności i ciasteczek przez użytkownika.
+8. Dodanie formularza kontaktowego mailto (softwarenetpolska@gmail.com)
+9. Strona ma wspierać język polski i angielski za pomoca flag w prawym górnym rogu strony.
 
 # dokumentacja
