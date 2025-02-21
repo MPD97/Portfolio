@@ -12,6 +12,7 @@
     --gradient: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
     --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* Reset poprzednich styli tła */
@@ -30,7 +31,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     color: var(--text-primary);
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: var(--font-primary);
     line-height: 1.7;
     letter-spacing: -0.01em;
     padding: 10px;
@@ -56,6 +57,10 @@ body {
     transition: all 0.3s ease;
     align-items: flex-start;
     min-height: 300px;
+    min-height: 1.2em;
+    font-family: var(--font-primary);
+    animation-fill-mode: backwards;
+    animation-delay: 0.2s;
 }
 
 .project-card:hover {
@@ -139,6 +144,7 @@ body {
 }
 
 .project-info h3 {
+    margin-top: 0;
     margin-bottom: 16px;
     font-size: 1.5rem;
     color: var(--text-primary);
@@ -165,7 +171,7 @@ body {
     font-weight: 600;
     letter-spacing: 0.01em;
     box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .project-links a:hover {
@@ -217,6 +223,10 @@ body {
     padding: 30px;
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
+    min-height: 1.2em;
+    font-family: var(--font-primary);
+    animation-fill-mode: backwards;
+    animation-delay: 0.1s;
 }
 
 .about-card:hover {
@@ -250,7 +260,7 @@ body {
     text-decoration: none;
     border-radius: 8px;
     font-weight: 500;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .linkedin-link:hover {
@@ -501,7 +511,6 @@ textarea {
 .cookie-buttons {
     display: flex;
     gap: 12px;
-    margin-top: 16px;
 }
 
 .cookie-buttons button {
@@ -541,6 +550,8 @@ textarea {
     z-index: 1000;
     box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
     margin: 0;
+    min-height: 1.2em;
+    font-family: var(--font-primary);
 }
 
 .cookie-content {
@@ -557,7 +568,8 @@ textarea {
 .cookie-content p {
     margin: 0;
     color: #f8fafc;
-    font-size: 0.95rem;
+    font-size: 0.75rem;
+    line-height: 1.5;
 }
 
 .cookie-buttons {
@@ -569,7 +581,7 @@ textarea {
     padding: 8px 16px;
     border-radius: 8px;
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 0.75rem;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -632,7 +644,7 @@ textarea {
     border-radius: 8px;
     text-decoration: none;
     font-weight: 500;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .contact-button:hover {
@@ -678,7 +690,7 @@ textarea {
     box-shadow: var(--shadow);
     cursor: pointer;
     opacity: 0.7;
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .lang-btn:hover {
@@ -707,21 +719,6 @@ textarea {
     }
 }
 
-/* Animations */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.about-card, .project-card, .contact-card {
-    animation: fadeUp 0.6s ease-out forwards;
-}
 
 /* Responsive improvements */
 @media (max-width: 768px) {
@@ -785,20 +782,6 @@ footer {
     border-radius: 10px;
 }
 
-/* Update translations object in script.js */
-const translations = {
-    'pl': {
-        // ... existing translations ...
-        'view-project': 'Przejdź na stronę',
-        // ... existing translations ...
-    },
-    'en': {
-        // ... existing translations ...
-        'view-project': 'Visit Website',
-        // ... existing translations ...
-    }
-};
-
 /* Typography improvements */
 h1, h2, h3 {
     font-weight: 700;
@@ -826,4 +809,34 @@ h2 {
         width: 100%;
         justify-content: center;
     }
+}
+
+/* Preload styles to prevent layout shift */
+.project-card, 
+.about-card, 
+.contact-card,
+.cookie-banner,
+h1, h2, h3, p {
+    min-height: 1.2em;
+    font-family: var(--font-primary);
+}
+
+/* Opóźnienia dla poszczególnych sekcji */
+.about-card {
+    animation-delay: 0.1s;
+}
+
+.project-card {
+    animation-delay: 0.2s;
+}
+
+.contact-card {
+    animation-delay: 0.3s;
+}
+
+/* Płynniejsze przejścia dla hover efektów */
+.project-links a, 
+.contact-button, 
+.lang-btn {
+    transition: all 0.3s ease;
 }

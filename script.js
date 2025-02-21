@@ -52,6 +52,18 @@ document.addEventListener('DOMContentLoaded', () => {
             startSlideshow();
         }
     });
+
+    // Handle image loading
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        if (img.complete) {
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', () => {
+                img.classList.add('loaded');
+            });
+        }
+    });
 });
 
 // Track project link clicks
@@ -201,8 +213,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const rejectButton = document.querySelector('.btn-reject');
     
     // Sprawdź czy użytkownik zaakceptował politykę
-    const cookieChoice = localStorage.getItem('cookieChoice');
-    if (cookieChoice !== 'accepted') {
+    const cookieConsent = localStorage.getItem('cookieConsent');
+    if (cookieConsent !== 'accepted') {
         cookieBanner.style.display = 'block';
     } else {
         cookieBanner.style.display = 'none';
@@ -210,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Obsługa przycisku akceptacji
     acceptButton.addEventListener('click', () => {
-        localStorage.setItem('cookieChoice', 'accepted');
+        localStorage.setItem('cookieConsent', 'accepted');
         cookieBanner.style.display = 'none';
         // Tutaj możesz dodać kod inicjalizujący Google Analytics
     });
@@ -218,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Obsługa przycisku odrzucenia
     rejectButton.addEventListener('click', () => {
         // Usuwamy wybór z localStorage, aby baner pojawił się ponownie po odświeżeniu
-        localStorage.removeItem('cookieChoice');
+        localStorage.removeItem('cookieConsent');
         cookieBanner.style.display = 'none';
     });
 });
