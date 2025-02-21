@@ -50,3 +50,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Track project link clicks
+document.querySelectorAll('.project-links a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        gtag('event', 'project_link_click', {
+            'project_name': e.target.closest('.project-card').querySelector('h3').textContent,
+            'link_type': e.target.textContent === 'GitHub' ? 'github' : 'demo'
+        });
+    });
+});
+
+// Track LinkedIn link clicks
+document.querySelector('.linkedin-link').addEventListener('click', () => {
+    gtag('event', 'social_link_click', {
+        'platform': 'linkedin'
+    });
+});

@@ -40,5 +40,6 @@ Celem projktu jest stworzenie prostej strony internetowej portfolio programisty.
 4. Strona ma być indeksowana przez wyszukiwarki internetowe.
 5. Dodanie analityki strony (google analytics)
 6. Dodanie formularza kontaktowego mailto (softwarenetpolska@gmail.com)
+7. Strona ma wspierać język polski i angielski za pomoca flag w prawym górnym rogu strony.
 
 # dokumentacja
