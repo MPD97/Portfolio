@@ -67,3 +67,63 @@ document.querySelector('.linkedin-link').addEventListener('click', () => {
         'platform': 'linkedin'
     });
 });
+
+// Google Analytics initialization with consent management
+document.addEventListener('DOMContentLoaded', () => {
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptButton = document.getElementById('accept-cookies');
+    const rejectButton = document.getElementById('reject-cookies');
+    const COOKIE_CONSENT_KEY = 'cookieConsent';
+
+    // Function to initialize Google Analytics
+    const initializeGA = () => {
+        // Load GA script dynamically only if consent is granted
+        const gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+        document.head.appendChild(gaScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    };
+
+    // Function to hide banner
+    const hideBanner = () => {
+        cookieBanner.classList.remove('visible');
+    };
+
+    // Function to show banner
+    const showBanner = () => {
+        cookieBanner.classList.add('visible');
+    };
+
+    // Check stored consent
+    const checkConsent = () => {
+        const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
+        if (consent === null) {
+            // No decision yet, show banner with delay
+            setTimeout(showBanner, 1000);
+        } else if (consent === 'accepted') {
+            // User previously accepted, initialize GA
+            initializeGA();
+        }
+    };
+
+    // Handle accept button click
+    acceptButton.addEventListener('click', () => {
+        localStorage.setItem(COOKIE_CONSENT_KEY, 'accepted');
+        hideBanner();
+        initializeGA();
+    });
+
+    // Handle reject button click
+    rejectButton.addEventListener('click', () => {
+        localStorage.setItem(COOKIE_CONSENT_KEY, 'rejected');
+        hideBanner();
+    });
+
+    // Check consent on page load
+    checkConsent();
+});

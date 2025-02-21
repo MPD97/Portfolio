@@ -8,7 +8,7 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', 'G-TFR2PJFQQK');
+        gtag('config', 'G-TFR2PJFQQK', { 'anonymize_ip': true });
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -58,6 +58,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <p>Ta strona używa plików cookie do analizy ruchu. Możesz wybrać, czy chcesz zaakceptować te pliki. 
+            Więcej informacji znajdziesz w <a href="privacy.html">Polityce Prywatności</a>.</p>
+            <div class="cookie-buttons">
+                <button id="accept-cookies" class="btn-accept">Akceptuję wszystko</button>
+                <button id="reject-cookies" class="btn-reject">Odrzuć analitykę</button>
+            </div>
+        </div>
+    </div>
     <main>
         <section class="about-me">
             <h2>O mnie</h2>

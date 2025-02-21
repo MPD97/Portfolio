@@ -68,6 +68,8 @@ Celem projktu jest stworzenie prostej strony internetowej portfolio programisty.
     8. Zmiany w polityce prywatnościZastrzegamy sobie prawo do zmiany niniejszej polityki. Zmiany będą publikowane na tej stronie.
     9. KontaktW razie pytań dotyczących polityki prywatności skontaktuj się z nami: [adres e-mail].
 7. Dodanie akceptacji polityki prywatności i ciasteczek przez użytkownika.
+    - w tresci wyskakującego okiena z akceptacją ciasteczek musi znajdowac sie link do polityki prywatności.
+8. Przed akceptacją ciasteczek dane google analytics nie sa zbierane. Użytkownik ma prawo odmówić akceptacji ciasteczek i zbierania danych przez google analytics. Akceptacja lub odmowa znajduje sie w banerze ciasteczek. Przeglądarka pamięta odmowę i akceptacje i nie wyświetla baneru akceptacji ciasteczek.
 8. Dodanie formularza kontaktowego mailto (softwarenetpolska@gmail.com)
 9. Strona ma wspierać język polski i angielski za pomoca flag w prawym górnym rogu strony.
 
