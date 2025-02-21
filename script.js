@@ -80,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to initialize Google Analytics
     const initializeGA = () => {
+        console.log("initializeGA");
         // Load GA script dynamically only if consent is granted
         const gaScript = document.createElement('script');
         gaScript.async = true;
@@ -105,12 +106,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check stored consent
     const checkConsent = () => {
         const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
+        console.log(consent);
         if (consent === null) {
             // No decision yet, show banner with delay
             setTimeout(showBanner, 1000);
         } else if (consent === 'accepted') {
             // User previously accepted, initialize GA
             initializeGA();
+        }
+        else{
+            setTimeout(showBanner, 1000);
         }
     };
 
@@ -187,4 +192,33 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update document language
         document.documentElement.lang = language;
     }
+});
+
+// Cookie banner functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const cookieBanner = document.querySelector('.cookie-banner');
+    const acceptButton = document.querySelector('.btn-accept');
+    const rejectButton = document.querySelector('.btn-reject');
+    
+    // Sprawdź czy użytkownik zaakceptował politykę
+    const cookieChoice = localStorage.getItem('cookieChoice');
+    if (cookieChoice !== 'accepted') {
+        cookieBanner.style.display = 'block';
+    } else {
+        cookieBanner.style.display = 'none';
+    }
+    
+    // Obsługa przycisku akceptacji
+    acceptButton.addEventListener('click', () => {
+        localStorage.setItem('cookieChoice', 'accepted');
+        cookieBanner.style.display = 'none';
+        // Tutaj możesz dodać kod inicjalizujący Google Analytics
+    });
+    
+    // Obsługa przycisku odrzucenia
+    rejectButton.addEventListener('click', () => {
+        // Usuwamy wybór z localStorage, aby baner pojawił się ponownie po odświeżeniu
+        localStorage.removeItem('cookieChoice');
+        cookieBanner.style.display = 'none';
+    });
 });

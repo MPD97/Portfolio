@@ -1,14 +1,38 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Import nowoczesnej czcionki */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* Modern color palette and base styles */
+:root {
+    --primary-color: #3b82f6;
+    --primary-hover: #2563eb;
+    --background: #f8fafc;
+    --card-bg: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --gradient: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* Reset poprzednich styli tła */
+html {
+    min-height: 100%;
 }
 
 body {
-    background-color: var(--background);
+    min-height: 100vh;
+    margin: 0;
+    background: #f5f7fa;
+    background-image: 
+        radial-gradient(at 40% 20%, rgba(59, 130, 246, 0.07) 0px, transparent 50%),
+        radial-gradient(at 80% 0%, rgba(34, 197, 94, 0.05) 0px, transparent 50%),
+        radial-gradient(at 0% 50%, rgba(99, 102, 241, 0.07) 0px, transparent 50%);
+    background-attachment: fixed;
+    background-size: cover;
     color: var(--text-primary);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     line-height: 1.7;
+    letter-spacing: -0.01em;
     padding: 10px;
     font-size: 16px;
 }
@@ -20,15 +44,16 @@ body {
 }
 
 .project-card {
-    background-color: var(--card-bg);
-    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
     padding: 24px;
     box-shadow: var(--shadow);
     margin-bottom: 20px;
     display: flex;
     gap: 30px;
     transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05);
     align-items: flex-start;
     min-height: 300px;
 }
@@ -132,18 +157,20 @@ body {
 .project-links a {
     display: inline-flex;
     align-items: center;
-    padding: 10px 24px;
-    background-color: var(--primary-color);
+    padding: 12px 28px;
+    background: var(--primary-color);
     color: white;
     text-decoration: none;
-    border-radius: 8px;
-    font-weight: 500;
+    border-radius: 12px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
     transition: all 0.2s ease;
 }
 
 .project-links a:hover {
-    background-color: var(--primary-hover);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -183,12 +210,13 @@ body {
 }
 
 .about-card {
-    background-color: var(--card-bg);
-    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
     padding: 30px;
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .about-card:hover {
@@ -321,18 +349,24 @@ body {
         --card-bg: #1e293b;
         --text-primary: #e2e8f0;
         --text-secondary: #94a3b8;
+        --gradient: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
     }
 
     body {
-        background-color: var(--background);
+        background: #0f172a;
+        background-image: 
+            radial-gradient(at 40% 20%, rgba(59, 130, 246, 0.1) 0px, transparent 50%),
+            radial-gradient(at 80% 0%, rgba(34, 197, 94, 0.1) 0px, transparent 50%),
+            radial-gradient(at 0% 50%, rgba(99, 102, 241, 0.1) 0px, transparent 50%);
         color: var(--text-primary);
     }
 
     .project-card,
-    .about-card {
-        background-color: var(--card-bg);
+    .about-card,
+    .contact-card {
+        background: rgba(30, 41, 59, 0.9);
         color: var(--text-primary);
-        border-color: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.1);
     }
 
     .about-content {
@@ -344,22 +378,33 @@ body {
     }
 
     .project-links a {
-        background-color: var(--primary-color);
+        background: var(--primary-color);
     }
 
     .project-links a:hover {
-        background-color: var(--primary-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
     }
 
     footer {
         border-top-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .cookie-banner {
+        background: #1e293b;
+    }
+
+    .btn-reject {
+        background: #334155;
+        color: #e2e8f0;
     }
 }
 
 /* High contrast mode */
 @media (forced-colors: active) {
     .project-card,
-    .about-card {
+    .about-card,
+    .contact-card {
         border: 1px solid CanvasText;
     }
 
@@ -455,77 +500,98 @@ textarea {
 /* Updated Cookie Banner Styles */
 .cookie-buttons {
     display: flex;
-    gap: 10px;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.cookie-buttons button {
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-accept {
-    background-color: var(--primary-color);
+    background: var(--primary-color);
     color: white;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
 }
 
 .btn-reject {
-    background-color: transparent;
-    border: 1px solid var(--text-secondary);
+    background: #f1f5f9;
     color: var(--text-secondary);
 }
 
-.cookie-content button {
-    border: none;
-    padding: 8px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: background-color 0.3s ease;
-}
-
-.btn-accept:hover {
-    background-color: var(--primary-hover);
+.btn-accept:hover, .btn-reject:hover {
     transform: translateY(-1px);
-}
-
-.btn-reject:hover {
-    background-color: var(--text-secondary);
-}
-
-@media (max-width: 768px) {
-    .cookie-buttons {
-        flex-direction: column;
-        width: 100%;
-    }
-    
-    .cookie-content button {
-        width: 100%;
-        padding: 12px;
-    }
 }
 
 /* Fixed Cookie Banner Styles */
 .cookie-banner {
+    background: #1e293b;
+    padding: 12px 0;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: var(--card-bg);
-    color: var(--text-primary);
-    padding: 15px;
-    z-index: 9999;
-    display: none; /* Hide by default */
-    box-shadow: 0 -4px 6px -1px rgb(0 0 0 / 0.1);
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.cookie-banner.visible {
-    display: block;
+    width: 100vw;
+    z-index: 1000;
+    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin: 0;
 }
 
 .cookie-content {
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.cookie-content p {
+    margin: 0;
+    color: #f8fafc;
+    font-size: 0.95rem;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.cookie-buttons button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-accept {
+    background: #3b82f6;
+    color: white;
+    border: none;
+}
+
+.btn-reject {
+    background: transparent;
+    color: #f8fafc;
+    border: 1px solid #f8fafc;
+}
+
+.btn-accept:hover {
+    background: #2563eb;
+}
+
+.btn-reject:hover {
+    background: rgba(248, 250, 252, 0.1);
 }
 
 /* Contact Section Styles */
@@ -542,44 +608,36 @@ textarea {
 }
 
 .contact-card {
-    background-color: var(--card-bg);
+    background: #ffffff;
     border-radius: 16px;
-    padding: 30px;
-    box-shadow: var(--shadow);
+    padding: 32px;
     text-align: center;
-    max-width: 400px;
-    margin: 0 auto;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.contact-card:hover {
-    box-shadow: var(--shadow-hover);
-    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .contact-card p {
-    margin-bottom: 20px;
-    font-size: 1.1em;
-    color: var(--text-primary);
+    color: #1e293b;
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+    font-weight: 500;
 }
 
 .contact-button {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    padding: 12px 24px;
-    background-color: var(--primary-color);
+    gap: 8px;
+    background: #3b82f6;
     color: white;
-    text-decoration: none;
+    padding: 12px 24px;
     border-radius: 8px;
+    text-decoration: none;
     font-weight: 500;
     transition: all 0.2s ease;
 }
 
 .contact-button:hover {
-    background-color: var(--primary-hover);
-    transform: translateY(-1px);
+    background: #2563eb;
+    transform: translateY(-2px);
 }
 
 .contact-button svg {
@@ -650,13 +708,19 @@ textarea {
 }
 
 /* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .about-card, .project-card, .contact-card {
-    animation: fadeIn 0.5s ease-out forwards;
+    animation: fadeUp 0.6s ease-out forwards;
 }
 
 /* Responsive improvements */
@@ -734,3 +798,32 @@ const translations = {
         // ... existing translations ...
     }
 };
+
+/* Typography improvements */
+h1, h2, h3 {
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    background: linear-gradient(to right, var(--primary-color), var(--primary-hover));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .cookie-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 12px 20px;
+    }
+
+    .cookie-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+}
